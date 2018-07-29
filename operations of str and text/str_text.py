@@ -10,7 +10,7 @@
 #9.以重新的列数重新格式化文本
 # 疑问清单：
 # 知识点：正则中?:的用法;match与search的区别；如何将文件中各种语言转化为同一标准，然后输出不乱码
-# 提高效率的点：快速回到当前的顶部或者底部 ；删除整行
+# 提高效率的点：快速回到当前的顶部或者底部ctr+Fn+左/右 顶部/底部     ；删除整行 ctr+y,不放入剪切板
 
 
 import re
@@ -252,3 +252,32 @@ def combine(source, maxsize):
 with open('text.py', 'w') as f:
     for part in combine(sample(), 32768):
         f.write(part)
+
+
+# 以固定的列数重新格式化文本
+# 使用 textwrap 模块来格式化字符串的输出。比如，假如你有下列的长字符串：
+
+s = "Look into my eyes, look into my eyes, the eyes, the eyes, \
+the eyes, not around the eyes, don't look around the eyes, \
+look into my eyes, you're under."
+# 下面演示使用 textwrap 格式化字符串的多种方式：
+import textwrap
+print(textwrap.fill(s, 70))
+# Look into my eyes, look into my eyes, the eyes, the eyes, the eyes,
+# not around the eyes, don't look around the eyes, look into my eyes,
+# you're under.
+
+
+print(textwrap.fill(s, 40, initial_indent='   '))
+#     Look into my eyes, look into my
+# eyes, the eyes, the eyes, the eyes, not
+# around the eyes, don't look around the
+# eyes, look into my eyes, you're under.
+
+print(textwrap.fill(s, 40, subsequent_indent='    '))
+# Look into my eyes, look into my eyes,
+#     the eyes, the eyes, the eyes, not
+#     around the eyes, don't look around
+#     the eyes, look into my eyes, you're
+#     under.
+
