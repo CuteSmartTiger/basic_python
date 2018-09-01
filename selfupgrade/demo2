@@ -1,0 +1,2 @@
+## !/bin/sh & #!/bin/bash区别
+写成 #!/bin/bash --posix，那么脚本执行效果跟#!/bin/sh是一样
