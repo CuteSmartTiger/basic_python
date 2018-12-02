@@ -9,7 +9,6 @@
 with open(r'test.txt','r') as f:
     # content = f.readlines()
     content = f.read()
-    print(content)
-    if r'\n' in content:
-        print('ok')
+    print content
+    if r' ' in content:
         pass
