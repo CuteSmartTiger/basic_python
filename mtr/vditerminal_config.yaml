@@ -1,0 +1,6 @@
+devicemanager: 192.168.5.19
+gateway: false
+ifacename: enp3s0
+iptype: dhcp
+keepthesame: true
+userportal: 192.168.5.19
