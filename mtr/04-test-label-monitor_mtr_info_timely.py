@@ -186,6 +186,7 @@ def save_abnormal_info(proto, package_loss, net_delay, ip_conflict):
     else:
         if is_abmormal:
             is_abmormal = False
+        disappear(1)
         return
 
 
