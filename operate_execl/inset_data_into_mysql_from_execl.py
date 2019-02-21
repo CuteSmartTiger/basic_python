@@ -29,6 +29,14 @@ def open_excel():
     except BaseException:
         print("locate worksheet in excel failed!")
 
+def is_chinese(uchar):
+    """判断一个unicode是否是汉字"""
+    if uchar >= u'\u4e00' and uchar <= u'\u9fa5':
+        return True
+    else:
+        return False
+
+
 import math
 from decimal import Decimal
 def insert_deta():
@@ -42,15 +50,26 @@ def insert_deta():
         # print '用户名'.decode('utf-8')
         # print row_data.index('用户名'.decode('gbk'))
         print type(row_data[2])
+        # if '\\' in str(row_data[2]):
+        #     print '中文'
         print len(row_data[2] if not isinstance(row_data[2],float) else str(row_data[2]))
         # print type(int(row_data[1]))
         # print  Decimal(row_data[1]).quantize(Decimal('0'))
         value = (row_data[0],row_data[1] ,row_data[2],row_data[3])
         print value
+        if isinstance(row_data[2],unicode):
+            print is_chinese(row_data[2])
         # sql = "INSERT INTO user(name,password,group_id,policy_id)VALUES(%s,%s,%s,%s)"
         # cursor.execute(sql, value)
         # conn.commit()
+        print '-----------======------------'
+        # if i ==1:
+        #     break
     # cursor.close()
+
+
+
+
 
 open_excel()
 insert_deta()
