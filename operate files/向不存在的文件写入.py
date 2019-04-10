@@ -8,7 +8,8 @@
 
 def mark_information_in_txt(mark_file,value='0'):
     with open(mark_file,'w') as fw:
-        fw.write(value)
+        res = fw.write(1/0)
+        print res
     with open(mark_file,'r') as fr:
         content = fr.read()
         if content == value:
